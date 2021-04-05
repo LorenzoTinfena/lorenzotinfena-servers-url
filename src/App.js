@@ -18,7 +18,7 @@ function App() {
     const [links, setLinks] = useState([]);
 
     useEffect(() => {
-        axios.get(`https://raw.githubusercontent.com/LorenzoTinfena/LorenzoTinfena/master/server/urls.json`)
+        axios.get('https://raw.githubusercontent.com/LorenzoTinfena/lorenzotinfena-servers-url/master/external-resources/urls.json')
              .then(res => setLinks(res.data))
     }, [])
 
