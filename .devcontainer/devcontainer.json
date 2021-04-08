@@ -7,7 +7,7 @@
 		// Update 'VARIANT' to pick a Node version: 10, 12, 14
 		"args": { "VARIANT": "14" }
 	},
-
+	"postCreateCommand": "npm install && cd client && npm install",
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/bash"
