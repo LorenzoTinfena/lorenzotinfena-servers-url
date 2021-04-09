@@ -1,5 +1,5 @@
-#custom
-secrets.*
+#customs
+.secrets
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/react
