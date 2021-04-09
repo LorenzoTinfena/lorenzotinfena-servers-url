@@ -33,7 +33,7 @@ return (
                 alignItems='center'
                 container>
                 <Grid item xs='auto' style={{ margin: 10, marginBottom: 20 }}>
-                    <Typography variant='h5'>I MIEI LINK</Typography>
+                    <Typography variant='h5'>My servers url!</Typography>
                 </Grid>
                 {links.map(({ title, url }) => (
                     <Grid item xs='12'>
