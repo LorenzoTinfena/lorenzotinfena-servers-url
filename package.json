@@ -1,5 +1,5 @@
 {
-  "name": "nodereactassieme",
+  "name": "lorenzo-tinfena-servers-url",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,8 +7,8 @@
     "build": "cd client && npm install && npm run build"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Lorenzo Tinfena",
+  "license": "MIT",
   "description": "",
   "dependencies": {
     "dotenv": "^8.2.0",
