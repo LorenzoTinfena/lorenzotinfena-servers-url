@@ -50,8 +50,8 @@ body example:
   }
   */
   //check password
-  print('update urls, body:')
-  print(req.body)
+  console.log('update urls, body:')
+  console.log(req.body)
   if (sha256(req.body.password) != process.env.UPDATE_URLS_SECRET_SHA256) {
     res.sendStatus(401)
     return
