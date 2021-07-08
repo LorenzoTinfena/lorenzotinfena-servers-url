@@ -22,36 +22,37 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.get("/api/urls.json", (req, res) => {
-	const client = new Client({
-		connectionString: process.env.DATABASE_URL,
-		ssl: {
-		  rejectUnauthorized: false
-		}
-	  });
-	  
-	  client.connect();
-	
-	  client.query('SELECT * FROM public.urls', (err, resQuery) => {
-		if (err) throw err;
-		res.json(resQuery.rows)
-		client.end();
-	  });
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
+  });
+
+  client.connect();
+
+  client.query('SELECT * FROM public.urls', (err, resQuery) => {
+    if (err) throw err;
+    res.json(resQuery.rows)
+    client.end();
+  });
 });
 
 app.post("/api/update-urls", urlencodedParser, (req, res) => {
   /*
 body example:
-	{ 
-		"password": "UPDATE_URLS_SECRET",
-		"urls": [
-			{"title": "Youtube", "url": "youtube.com"},
-			{"title": "Google", "url": "google.com"},
-			{"title": "Hub docker", "url": "hub.docker.com"}]
-	}
-	*/
+  { 
+    "password": "UPDATE_URLS_SECRET",
+    "urls": [
+      {"title": "Youtube", "url": "youtube.com"},
+      {"title": "Google", "url": "google.com"},
+      {"title": "Hub docker", "url": "hub.docker.com"}]
+  }
+  */
   //check password
-  if (sha256(req.body.password) != process.env.UPDATE_URLS_SECRET_SHA256)
-  {
+  print('update urls, body:')
+  print(req.body)
+  if (sha256(req.body.password) != process.env.UPDATE_URLS_SECRET_SHA256) {
     res.sendStatus(401)
     return
   }
