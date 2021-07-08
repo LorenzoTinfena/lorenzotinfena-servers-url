@@ -52,7 +52,7 @@ body example:
   //check password
   console.log('update urls, body:')
   console.log(req.body)
-  if (sha256(req.body.password) != process.env.UPDATE_URLS_SECRET_SHA256) {
+  if (req?.body?.password && req?.body?.urls && sha256(req.body.password) != process.env.UPDATE_URLS_SECRET_SHA256) {
     res.sendStatus(401)
     return
   }
